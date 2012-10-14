@@ -1,0 +1,225 @@
+h1, h2, h3, ul li{
+		font-family: HelveticaNeueBoldCondensed, HelveticaNeue, Helvetica-Neue, Helvetica, Arial, sans-serif
+	}
+	h3{
+		display: block;
+		font-size: 2.8em;
+		color: white;
+		line-height:1.6;
+		font-weight: initial;
+	}
+	body{
+		background-color: black;
+		overflow-x: hidden;
+	}
+	
+	#bg{
+		background-image: url("images/bg.png");
+		background-repeat: no-repeat;
+		height: 600px;
+		width: 1300px;
+		left: 550px;
+		position: absolute;
+		top: 150px;
+		opacity: 0.1;
+	}
+	#logo{
+		background-image: url("images/icon.png");
+		background-size: 300;
+		position: absolute;
+		height: 300px;
+		width: 300px;
+		top: 5%;
+		left: 800px;
+		z-index: 1;
+	}
+	#slider-container{
+		height: 100%;
+		padding: 0 0;
+		margin: 0 0;
+		z-index: 2;
+	}
+	#next{
+		position: absolute;
+		left: 660px;
+		top: 250px;
+		background: url("images/next.png") no-repeat scroll 0 0 transparent;
+		display: block;
+		height: 64px;
+		margin-bottom: 8px;
+		overflow: hidden;
+		text-indent: -200px;
+		width: 64px;
+		z-index: 1;
+	}
+	#slider-frame{
+		position: absolute;
+		display: block;
+		width: 8000px;
+		top: 20px;
+		left: 200px;
+		overflow: hidden;
+	}
+
+	.frame{
+		width: 500px;
+		height: 600px;
+		padding-left: 0;
+		padding-right: 800px;
+		position: relative;
+		float: left;
+	}
+	.slider-image{
+		height:600px;
+		width: auto;
+	}
+
+	.slider-caption{
+		position: absolute;
+		left: 775px;
+		top: 370px;
+	}
+	.new-caption{
+		position: absolute;
+		right: 180px;
+		top: 240px;
+	}
+	
+	.captions{
+		width: 385px;
+		text-align: center;
+	}
+	
+	#slider-nav{
+		display: block;
+		position: absolute;
+		bottom: 35px;
+		width: 100%;
+		height: 30px;
+		clear: both;
+	}
+	#slider-nav ul
+	{
+		clear: both;
+		list-style: none;
+		margin: 0px auto;
+		width: 200px;
+		display: block;
+	}
+	#slider-nav ul li{
+		float: left;
+	}
+	#slider-nav ul li a {
+		background: url("images/nav.png");
+		width: 20px;
+		height: 20px;
+		display: block;
+		margin: 3px;
+		text-decoration: none;
+	}
+	#slider-nav ul li a span{
+		visibility: hidden;
+	}
+	#slider-nav ul li a.selected {
+		background-position: 0 -24px;
+	}
+	
+	#create-user {
+		position: absolute;
+		left: 850px;
+		top: 515px;
+	   border-top: 1px solid #ffffff;
+	   background: #ffffff;
+	   background: -webkit-gradient(linear, left top, left bottom, from(#ffffff), to(#ffffff));
+	   background: -webkit-linear-gradient(top, #ffffff, #ffffff);
+	   background: -moz-linear-gradient(top, #ffffff, #ffffff);
+	   background: -ms-linear-gradient(top, #ffffff, #ffffff);
+	   background: -o-linear-gradient(top, #ffffff, #ffffff);
+	   padding: 17px 34px;
+	   -webkit-border-radius: 15px;
+	   -moz-border-radius: 15px;
+	   border-radius: 15px;
+	   -webkit-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	   -moz-box-shadow: rgba(0,0,0,1) 0 1px 0;
+	   box-shadow: rgba(0,0,0,1) 0 1px 0;
+	   text-shadow: rgba(0,0,0,.4) 0 1px 0;
+	   color: #000000;
+	   font-size: 22px;
+	   font-family: Helvetica, Arial, Sans-Serif;
+	   text-decoration: none;
+	   vertical-align: middle;
+	   padding: 0em 0em;
+	}
+	#create-user:hover {
+
+	   background: #ffc30f;
+	   color: #ffffff;
+	}
+	#create-user:active {
+	   
+	   background: #000000;
+	}
+	.captions a{
+		text-decoration: none;
+	}
+	#create-user{
+		bottom: -6px;
+		position: relative;
+	}
+	#footer{
+		position: absolute;
+		top: 680px;
+		width: 100%;
+		height: 150px;
+		background-color: grey;
+	}
+	#footer ul{
+		padding-left: 0px;
+		margin: 0 auto;
+		text-align: center;
+		position: absolute;
+		left: 25%;
+	}
+	#footer ul li{
+		float: left;
+		padding-right: 160px;
+		display: inline;
+		margin: 0px 5px 20px 5px;
+		font-size: 18px;
+		list-style: none outside none;
+		color: #CCC;
+		text-shadow: 0px 0px 6px #111;
+	}
+	#footer ul li a{
+		text-decoration: none;
+		color: white;
+		padding: 10px;
+	}
+	
+	#footer ul li a div{
+	   padding: 10.5px 21px;
+	   -webkit-border-radius: 8px;
+	   -moz-border-radius: 8px;
+	   border-radius: 8px;
+	   text-shadow: rgba(0,0,0,.4) 0 2px 0;
+	   color: white;
+	   font-size: 20px;
+	   font-family: Helvetica, Arial, Sans-Serif;
+	   text-decoration: none;
+	   vertical-align: middle;
+   }
+	#footer ul li a div:hover {
+	   border-top-color: #ffffff;
+	   background: #ffffff;
+	   color: #000000;
+	   text-shadow: rgba(0,0,0,.4) 0 0px 0;
+   }
+	#footer ul li a div:active {
+	   border-top-color: #000000;
+	   background: #000000;
+	}
+	#copyright{
+		position: absolute;
+		top: 76px;
+		left: 44%;
+	}

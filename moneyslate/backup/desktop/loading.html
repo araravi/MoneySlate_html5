@@ -1,0 +1,56 @@
+<HTML>
+ <HEAD>
+  <TITLE> jQueryUI dialog loading screen DEMO </TITLE>
+  <script type="text/javascript" src="js/jquery-1.6.2.min.js"></script>
+  <script type="text/javascript" src="js/jquery-ui-1.8.16.custom.min.js"></script>
+	<!-- include smoothness jQueryUI theme -->
+	<link rel="stylesheet" type="text/css" href="css/ui-lightness/jquery-ui-1.8.16.custom.css">
+
+  <script type="text/javascript" src="js/loadingScreen.js"></script>
+  <style type="text/css">
+	body {
+		font-family:Arial,Geneva,Verdana,sans-serif;
+		font-size: 0.8em;
+		overflow-x: hidden;
+	}
+	#loadingScreen {
+		background: url(images/loading.gif) no-repeat 5px 8px;
+		padding-left: 25px;
+	}
+	/* hide the close x on the loading screen */
+	.loadingScreenWindow .ui-dialog-titlebar-close {
+		display: none;
+	}
+  </style>
+  <script type="text/javascript">
+	   $.ajaxSetup ({  
+        cache: false  
+    });  
+    var ajax_load = "<img src='images/109.gif' alt='loading...' />";  
+	
+//  load() functions  
+    var loadUrl = "http://ec2-107-20-87-250.compute-1.amazonaws.com/app0.1/website/mod_index.html";  
+		$("#result").live("custom",function(e,myName, myValue){
+		console.log("called");
+		closeWaitingDialog();
+		});
+    $(document).ready(function() {  
+		waitingDialog({});
+        $("#result").load(loadUrl,function(data){
+		console.log("done");
+		$("#result").trigger("custom");
+		console.log("triggered");
+		});	
+    });
+	
+	
+  </script>
+ </HEAD>
+
+ <BODY>
+ 
+
+  <div id="loadingScreen"></div>
+  <div id="result"></div>
+ </BODY>
+</HTML>

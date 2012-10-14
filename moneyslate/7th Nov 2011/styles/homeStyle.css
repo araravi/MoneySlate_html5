@@ -1,0 +1,83 @@
+.tile{
+}
+.ui-page{
+	border: 1px solid #778174 /*{a-body-border}*/;
+	color:  #ffffff  /*{a-body-color}*/;
+	text-shadow:   0   /*{a-body-shadow-x}*/   1px   /*{a-body-shadow-y}*/  1px  /*{a-body-shadow-radius}*/  #444444  /*{a-body-shadow-color}*/;
+	background:  #002f32  /*{a-body-background-color}*/;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(  #003337  /*{a-body-background-start}*/),  #002A2D  /*{a-body-background-end}*/)); /* Saf4+, Chrome */
+	background-image: -webkit-linear-gradient(top,  #003337  /*{a-body-background-start}*/,  #002A2D  /*{a-body-background-end}*/); /* Chrome 10+, Saf5.1+ */
+	background-image:    -moz-linear-gradient(top,  #003337  /*{a-body-background-start}*/,  #002A2D  /*{a-body-background-end}*/); /* FF3.6 */
+	background-image:     -ms-linear-gradient(top,  #003337  /*{a-body-background-start}*/,  #002A2D  /*{a-body-background-end}*/); /* IE10 */
+	background-image:      -o-linear-gradient(top,  #003337  /*{a-body-background-start}*/,  #002A2D  /*{a-body-background-end}*/); /* Opera 11.10+ */
+	background-image:         linear-gradient(top,  #003337  /*{a-body-background-start}*/,  #002A2D  /*{a-body-background-end}*/);
+}
+.leftTile{
+	margin-right:2px;
+}
+.rightTile{
+	margin-left:2px;
+}
+
+.repTile{ 
+   border: 1px solid #2A2A2A; 
+   color:red;  
+ }
+
+
+.tile #metileElement .ui-grid-a .ui-block-b{
+	width: 50%;
+}
+
+#reporttile{
+	padding-bottom:8px;
+}
+
+.tile #metileElement .ui-grid-a .ui-block-a{
+	width: 50%;
+}
+
+.tile #reporttileElement .ui-grid-a .ui-block-b{
+	display:table;
+	width: 50%;
+}
+
+.tile #reporttileElement .ui-grid-a .ui-block-a{
+	width: 50%;
+}
+
+.tile #metileElement{
+	color:#ffffff;
+	font-size: 0.8em;
+}
+
+.tile #reporttileElement{
+	color:#ffffff;
+	font-size: 0.8em;
+}
+
+.tilecontent{
+	font-size: 1.4em;
+}
+
+.currency{
+	font-size:0.8em;
+}
+
+.mapDiv {
+    width:500px;
+    height:300px;
+    border:1px solid #efefef;
+    margin:auto;
+    -moz-box-shadow:5px 5px 10px #000;
+    -webkit-box-shadow:5px 5px 10px #000;
+}
+
+.emailDisplay{
+	color:#4169e1;
+}
+
+.expenseDate{
+	float:right;
+	padding-right:5%;
+}

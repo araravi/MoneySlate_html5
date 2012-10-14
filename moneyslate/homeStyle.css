@@ -1,0 +1,80 @@
+.tile{
+    font-family: 'Salsa', cursive;
+	color:#993399;
+}
+
+.ui-page {
+        background: url('../icons/bck.png');
+		/*-webkit-backface-visibility: hidden;*/
+ }
+
+.leftTile{
+	margin-right:2px;
+}
+.rightTile{
+	margin-left:2px;
+}
+
+.repTile{ 
+   border: 1px solid #2A2A2A; 
+   color:red;  
+   background-image: url('../icons/bck.png');	
+ }
+
+
+.tile #metileElement .ui-grid-a .ui-block-b{
+	width: 50%;
+}
+
+#reporttile{
+	padding-bottom:8px;
+}
+
+.tile #metileElement .ui-grid-a .ui-block-a{
+	width: 50%;
+}
+
+.tile #reporttileElement .ui-grid-a .ui-block-b{
+	display:table;
+	width: 50%;
+}
+
+.tile #reporttileElement .ui-grid-a .ui-block-a{
+	width: 50%;
+}
+
+.tile #metileElement{
+	font-size: 0.8em;
+	background: url('../icons/back.png');
+}
+
+.tile #reporttileElement{
+	font-size: 0.8em;
+	background: url('../icons/back.png');
+}
+
+.tilecontent{
+	font-size: 1.4em;
+}
+
+.currency{
+	font-size:0.8em;
+}
+
+.mapDiv {
+    width:500px;
+    height:300px;
+    border:1px solid #efefef;
+    margin:auto;
+    -moz-box-shadow:5px 5px 10px #000;
+    -webkit-box-shadow:5px 5px 10px #000;
+}
+
+.emailDisplay{
+	color:#4169e1;
+}
+
+.expenseDate{
+	float:right;
+	padding-right:5%;
+}

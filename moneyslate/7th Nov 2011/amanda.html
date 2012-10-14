@@ -1,0 +1,259 @@
+
+<!DOCTYPE html>
+<!--<html manifest='letterstoamanda.manifest'>-->
+<html>
+<head>
+	<meta charset="utf-8">
+	<META NAME="viewport" content="width=device-width, initial-scale=1">
+	<META NAME="Description" CONTENT="Pen down your feelings and thoughts and write to those in need of comfort or love. Everyone deserves to be heard. Everyone deserves to be loved.">
+	<META NAME="title" content="LetterstoAmanda.com | You Write, the World Listens" />
+	<link rel="image_src" href="http://www.letterstoamanda.com/img/logo_thumb.png" />
+	
+	<title>LetterstoAmanda.com | You Write, the World Listens</title> 
+    
+	<link rel="stylesheet" href="css/jquery.mobile-1.0rc1.min.css" />   
+    <link rel="stylesheet" href="css/jquery.alerts.css" /> 
+	<link id="size-stylesheet" rel="stylesheet" href="css/global.css" /> 
+    <script type="text/javascript" src="scripts/cache.js"></script>
+	<script type="text/javascript" src="scripts/jquery-1.6.4.min.js"></script>
+	<script type="text/javascript" src="scripts/jquery.mobile-1.0rc1.min.js"></script>
+    <script type="text/javascript" src="scripts/jquery.alerts.js"></script>
+	<script type="text/javascript" src="scripts/utf8_encode.js"></script>
+    <script type="text/javascript" src="scripts/md5.js"></script>
+    <script type="text/javascript" src="scripts/constants.js"></script>
+    <script type="text/javascript" src="scripts/offline.js"></script>
+    <script type="text/javascript" src="scripts/ajax_calls.js"></script>
+    <script type="text/javascript" src="scripts/dynamic.js"></script>
+    
+    <script type="text/javascript" src="controllers/main_controller.js"></script>
+    <script type="text/javascript" src="controllers/world_controller.js"></script>
+    <script type="text/javascript" src="controllers/read_controller.js"></script>
+    <script type="text/javascript" src="controllers/write_controller.js"></script>
+        
+	<script type="text/javascript">
+	
+
+	var use_swipe = true;
+	var desktop = false;
+	
+	
+	   var ua = window.navigator.userAgent;
+	   if(ua.indexOf("MSIE ") > 0){
+		  	window.location.href = 'http://letterstoamanda.com/switchbrowser.html'; 		  
+		}
+
+	
+		//Code to check if user is using mobile
+		//	window.location.href = 'http://letterstoamanda.com/gomobile.html';
+	if(!(location.hostname == "localhost") && !(ua.match(/(iPad)|(iPhone)|(iPod)|(android)|(blackberry)|(webOS)/i)))
+	{//If desktop
+		 $("#size-stylesheet").attr("href", "css/desktop.css");	
+		use_swipe = false; 
+		desktop = true;
+	}
+
+	$('document').ready(function(){
+		$( '#t0' ).live( 'swipeleft',function(event, ui){
+			if(use_swipe){
+				$.mobile.changePage('#t1');
+			}
+		});
+		
+		$( '#t1' ).live( 'swipeleft',function(event, ui){
+			if(use_swipe){
+				$.mobile.changePage('#t2');
+			}
+		});
+		
+		$( '#t1' ).live( 'swiperight',function(event, ui){
+			if(use_swipe){
+				$.mobile.changePage('#t0', {reverse:true});
+			}
+		});
+		
+		$( '#t2' ).live( 'swiperight',function(event, ui){
+			if(use_swipe){
+				$.mobile.changePage('#t1', {reverse:true});
+			}
+		});
+	});	//Only enable swipe on mobile
+
+
+	$('document').ready(function(){
+								 
+		$("a img").hover(					
+						 
+		 function()
+		 {
+		  this.src = this.src.replace("_off","_on");
+		 },
+		 function()
+		 {
+		  this.src = this.src.replace("_on","_off");
+		 }
+		);									 
+			
+		$('#t0').live('keydown',function (e) {
+			 var keyCode = e.keyCode || e.which;
+		
+			if(keyCode == 39){
+				$.mobile.changePage('#t1');
+			}
+		});
+		
+		$('#t1').live('keydown',function (e) {
+			 var keyCode = e.keyCode || e.which;
+		
+			if(keyCode == 39){
+				$.mobile.changePage('#t2');
+			}else if(keyCode == 37){
+				$.mobile.changePage('#t0', {reverse:true});
+			}
+		});
+		
+		$('#t2').live('keydown',function (e) {
+			 var keyCode = e.keyCode || e.which;
+		
+			if(keyCode == 37){
+				$.mobile.changePage('#t1', {reverse:true});
+			}
+		});
+	});
+
+	</script>
+    
+    <script type="text/javascript">var switchTo5x=true;</script>
+	<script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+	<script type="text/javascript">stLight.options({publisher:'1bc85ce3-fcf1-4f18-a328-7a1abc2105c7'});</script>
+</head> 
+<body> 
+	<div data-role="page" id="main" style="width: 100%; text-align:center" >
+    <script type="text/javascript">
+		$('document').ready(function(){
+									 
+		$("a img").hover(					
+						 
+		 function()
+		 {
+		  this.src = this.src.replace("_off","_on");
+		 },
+		 function()
+		 {
+		  this.src = this.src.replace("_on","_off");
+		 }
+		);
+	});
+	</script>
+        <div id="beta"></div>
+        <div data-role="content" style=" position: absolute; top: 50%; left: 50%; margin-top:-17em; margin-left:-8.5em;">
+           <div class="logo"></div><br><br>
+                 <p>
+               <a href="#write"><img src="img/write_off.png" width="80" height="80" alt="Write"></a><br><br>
+              <a href="#world"><img src="img/read_off.png" width="80" height="80"  alt="World"></a> <br><br> 
+          </p>
+        </div><!-- /content -->   
+      <a href="#t0"> <div class="indexfooter"></div></a>
+	</div><!-- End of Main /page -->
+ 
+    <!-- Start of Write page -->
+	<div data-role="page"  id="write">
+        <div data-role="content" align="center"></div><!-- /content -->
+	</div><!-- End of Write /page -->
+	
+	 <!-- Start of read details page -->
+	<div data-role="page"  id="read">
+	   	<div data-role="content" align="center"></div>
+	</div><!-- End of readDetails /page -->
+    
+    <div data-role="page" align="center" id="t0" >
+        <div align='left' style='padding:10px;'><a href='#main'><div id='return_home'></div></a></div>
+        <div align='center' class='topLogo'></div>		
+        <div class='keyboard'></div>
+		<div data-role="content" id="textBox" class="readText">	 
+		
+		   	<p>We believe that every single person in the world <span id='bold'>deserves to be heard</span> and <span id='bold'>deserves to be loved</span>.</p>
+			<p>We also believe, that in every single one of us, there exist the capacity to <span id='bold'>recognize</span>, and to some extent, <span id='bold'>share feelings that are being experienced by another fellow being.</span></p>
+			
+			<p>Pen down your feelings and thoughts and write to those in need of comfort or love.</p>
+			<p>The name Amanda means having to be loved, deserving to be loved and worthy of love.</p>
+			<p align='center'>In here, we all are, <span id='bold'> Amanda</span>.</p>
+            <br>
+            <p align="center">Page 1 of 3</p>
+		</div><!-- /content -->
+	<a href="#t1" data-transition="slide">	<div class="rightArrow"></div></a><div id="hint"><img src="img/mobile_nexthint.png"></div>
+
+     
+    </div><!-- End of t0 /page -->
+    
+    <div data-role="page" align="center" id="t1" style="width: 100%;">
+       <div align='left' style='padding:10px;'><a href='#main'><div id='return_home'></div></a></div>
+       <div align='center' class='topLogo'></div>	
+               <div class='keyboard'></div>
+		<div data-role="content" id="textBox">	  
+		  	<p align="center"><img src="img/tutorial_write.png"></p>
+		  <a href="#t0" data-transition="slide" data-direction="reverse"><div class="leftArrow"></div></a>
+    	<a href="#t2" data-transition="slide">	<div class="rightArrow"></div></a>
+
+	   		<p> The Write section is where you pen down your inner most thoughts and feelings (happiness or sadness) to share with all other Amandas around the world. No one will judge you and all entries are strictly anonymous. </p>
+            
+            <br>
+            <p align="center">Page 2 of 3</p>
+		</div><!-- /content -->
+    </div><!-- End of t1 /page -->
+    
+    <!-- Start of T2 page --> 
+    <div data-role="page" align="center" id="t2" style="width: 100%;">
+            <div align='left' style='padding:10px;'><a href='#main'><div id='return_home'></div></a></div>
+            <div align='center' class='topLogo'></div>	
+          
+		<div data-role="content" id="textBox">	  
+		  	<p align="center"><img src="img/tutorial_read.png"></p>
+		 <a href="#t1" data-transition="slide" data-direction="reverse"><div class="leftArrow"></div></a>
+	   		<p> The Read section is where you can read letters from all the other Amandas around the world. If what was written is something that you can relate to, do write back to him or her with words of encouragement and support. </p>
+            
+            <br>
+            <p align="center">Page 3 of 3</p>
+		</div><!-- /content -->
+		<div class="tutorialfooter">
+	    	<a href="#main"><div class="getStarted"></div></a>  	 		
+	    </div>   
+    </div><!-- End of t2 /page -->
+    
+    <!-- Start of World page --> 
+    <div data-role="page"  id="world">
+      	<div data-role="content" align="center"></div>  <!-- /content -->
+    </div><!-- End of world /page -->
+    
+    <!-- Start of World2 page --> 
+    <div data-role="page"  id="world2">
+      	<div data-role="content" align="center"></div>  <!-- /content -->
+    </div><!-- End of world /page -->
+    
+    <!-- Start of alert page --> 
+    <div data-role="dialog" id="alert" data-transition="pop" data-theme="z">
+    	<div data-role="header" data-theme="e"></div>
+      	<div data-role="content" align="center" data-theme="z"></div>  <!-- /content -->
+    </div><!-- End of alert /page -->
+
+	<script type="text/javascript">
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-26295036-1']);
+	_gaq.push(['_setDomainName', 'www.letterstoamanda.com']);
+  	_gaq.push(['_trackPageview']);
+	
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	
+	if (desktop){
+		var uvOptions = {};
+		(function() {
+			var uv = document.createElement('script'); uv.type = 'text/javascript'; uv.async = true;
+			uv.src = ('https:' == document.location.protocol ? 'https://' : 'http://') + 'widget.uservoice.com/p16scdYVclchXH57LrWxUQ.js';
+			var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(uv, s);
+		})();
+	}
+	</script>    
+</body>

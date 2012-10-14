@@ -1,0 +1,185 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Pragma" content="no-cache">
+<meta http-equiv="expires" content="0">
+	<meta charset="utf-8" />
+ <!--
+ TODO:
+ overflow on up/down
+ validation
+ dont roll dates
+date in picker = now default or date of textbox
+ if keyboard shown adjust its placement
+ -->
+<link rel="stylesheet"  href="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.css" />
+<script src="http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js"></script>
+    <script src="dFormat.js" type="text/javascript"></script>
+    <script src="md.js" type="text/javascript"></script>
+    <link href="md.css" rel="stylesheet" type="text/css" />
+      <script type="text/javascript">
+          $(document).ready(function () {
+
+
+              $(window).resize(function (t) {
+                  var top = ($(window).height() - $('.jqmWindow').height()) / 2;
+            
+                  if (top < 0) { top = 0; }
+                  $('.jqmWindow').css('left', ($(window).width() - $('.jqmWindow').width()) / 2 + 'px').css('top', top + 'px');
+              });
+              $('.jqmWindow').css('left', ($(window).width() - $('.jqmWindow').width()) / 2 + 'px');
+
+              // alert('here');
+              //$('#dStr').html(new Date().format("fullDate"));
+              var cd = new Date();
+
+              /*Defaults*/
+              $('#dStr').html(dateFormat(cd, "fullDate"));
+              $('#mon').val(dateFormat(cd, "mmm"));
+              $('#day').val(dateFormat(cd, "dd"));
+              $('#year').val(dateFormat(cd, "yyyy"));
+              //$('#year').val(cd.getFullYear());
+
+              /*Mods*/
+              $('#pyear').tap(function () {
+                  cd.setYear(cd.getFullYear() + 1);
+                  // $('#year').val(cd.getFullYear());
+                  updateF();
+                  //$('#year').focus();
+                  return false;
+              });
+              $('#pmon').tap(function () {
+                  cd.setMonth(cd.getMonth() + 1);
+                  updateF();
+                  return false;
+              });
+              $('#pday').tap(function () {
+                  cd.setDate(cd.getDate() + 1);
+                  updateF();
+                  return false;
+              });
+              $('#myear').tap(function () {
+                  cd.setYear(cd.getFullYear() - 1);
+                  updateF();
+                  // $('#year').focus();
+                  return false;
+              });
+              $('#mmon').tap(function () {
+                  cd.setMonth(cd.getMonth() - 1);
+                  updateF();
+                  return false;
+              });
+              $('#mday').tap(function () {
+                  cd.setDate(cd.getDate() - 1);
+                  updateF();
+                  return false;
+              });
+
+              /*Functions*/
+              function updateF() {
+                  $('#year').val(dateFormat(cd, "yyyy"));
+                  $('#mon').val(dateFormat(cd, "mmm"));
+                  $('#day').val(dateFormat(cd, "dd"));
+                  $('#dStr').html(dateFormat(cd, "fullDate"));
+                  $('#setfoc').focus();
+                  return false;
+              }
+              $('#dialog').jqm({ modal: true });
+
+              $('#show_date,#final').tap(function () {
+
+                  //$('#divpd').dialog('open');
+                  $('#dialog').jqmShow();
+                  $('#setfoc').focus();
+                  return false;
+              });
+
+              $('#close').tap(function () {
+
+                  $('#dialog').jqmHide();
+                  return false;
+              });
+              $('#set').tap(function () {
+
+                  $('#final').val(dateFormat(cd, "mm/dd/yyyy"));
+                  $('#dialog').jqmHide();
+                  return false;
+              });
+          });
+    </script>
+    <style>
+        body{
+       /* font-family:"Arial", Arial, ans-serif;*/
+
+        }
+    .test
+    {
+        font-size:30px;
+       /**/ margin:0px;
+        background-color:#000;
+        color:#fff;
+    }
+    input {
+    font-size:28px;
+    text-align:center;
+    padding:0px;
+
+    /**/font-weight:bold;
+}
+    </style>
+</head>
+<body >
+<div style="position:absolute; left:-9999px;"><a href="#" id="setfoc"></a></div>
+<div >
+Test Fields:
+<br /><br />
+<div style='float:left;margin-right:5px;'>Date of birth:<input type="text" disabled="disabled" id="final" style='width:160px;' /></div> <div role="main" id='show_date' class="ui-content ui-body-b ui-corner-all-1" data-role="content" data-theme="a" style="font-size:20px;text-align: center; padding: 10px 0px 5px 0px;margin:0px;width:30px">...</div>
+</div>
+
+
+
+
+<div class="jqmWindow" id="dialog" >
+<table class='test' cellpadding='0' cellspacing='0' border='0'>
+<tr>
+    <td colspan='3'>
+        <div style='border-bottom:thin solid #fff;font-size:18px;margin-bottom:5px;padding:5px;height:50px;'>
+            <div style='float:left;margin-right:5px;'><img src="clock.png"/></div>
+            <div id='dStr' style='width:200px;float:left;font-size:16px;letter-spacing:1px;font-weight:lighter; font-family: Helvetica, Arial, sans-serif;'></div>
+        </div>
+   </td>
+</tr>
+<tr>
+<td>
+    <table align='center' style='margin-top:5px;margin-bottom:5px;' cellpadding='0'  cellspacing='5' border='0'>
+        <tr>
+        <td>
+            <div id="pmon"  role="main" class="ui-content ui-body-b ui-corner-top-2" data-role="content" style="text-align: center; width: 63px; padding: 5px 0px;margin:0px 2px;">+</div><input type="text" class='ui-shadow-inset ui-body-c' id="mon" style="width:60px;padding:0px;height:38px;margin:0px 2px;" /><div id="mmon" role="main" class="ui-content ui-body-b ui-corner-bottom-2" data-role="content" data-theme="a" style="text-align: center; width: 63px; padding: 5px 0px;margin:0px 2px 2px 2px;">-</div>
+        </td>
+        <td>
+            <div id="pday" role="main" class="ui-content ui-body-b ui-corner-top-2" data-role="content"  style="text-align: center; width: 63px; padding: 5px 0px;margin:0px 2px;">+</div><input type="text" class='ui-shadow-inset ui-body-c' id="day" style="width:60px;padding:0px;height:38px;margin:0px 2px;" /><div id="mday" role="main" class="ui-content ui-body-b ui-corner-bottom-2" data-role="content" data-theme="a" style="text-align: center; width: 63px; padding: 5px 0px;margin:0px 2px;">-</div>
+        </td>
+        <td>
+            <div id="pyear" role="main" class="ui-content ui-body-b ui-corner-top-2" data-role="content" style="text-align: center; width: 79px; padding: 5px 0px;margin:0px 2px;">+</div><input type="text" class='ui-shadow-inset ui-body-c' id="year" style="width:76px;padding:0px;height:38px;margin:0px 2px;" /><div id="myear" role="main" class="ui-content ui-body-b ui-corner-bottom-2" data-role="content" data-theme="a" style="text-align: center; width: 79px; padding: 5px 0px;margin:0px 2px;">-</div>
+        </td>
+        </tr>
+    </table>
+</td></tr>
+
+<tr><td colspan='3' style="background-color:#a7a7a7;">
+    <table width="100%">
+    <tr>
+    <td width="50%">
+    <div role="main" id='set' class="ui-content ui-body-b ui-corner-all-1" data-role="content" data-theme="a" style="font-size:20px;text-align: center; padding: 10px 0px;margin:2px;">Set</div>
+    </td>
+    <td>
+    <div role="main" id='close' class="ui-content ui-body-b ui-corner-all-1" data-role="content" data-theme="a" style="font-size:20px;text-align: center; padding: 10px 0px;margin:2px;">Cancel</div>
+    </td>
+    </tr></table>
+</td></tr>
+</table>
+</div>
+
+</body>
+</html>

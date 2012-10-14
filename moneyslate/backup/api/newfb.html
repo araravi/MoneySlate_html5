@@ -1,0 +1,63 @@
+<html>
+<head>
+  <title>Hello World</title>
+  <meta name="viewport" 
+        content="initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"/>
+</head>
+<style>
+  body.connected #login { display: none; }
+  body.connected #logout { display: block; }
+  body.not_connected #login { display: block; }
+      body.not_connected #logout { display: none; }
+</style>
+
+<body>
+
+<fb:login-button autologoutlink="true" perms="email"></fb:login-button>
+<div id="fb-root">
+</div>
+<script>
+
+window.fbAsyncInit = function () {
+
+FB.init({ appId: '190942770985124', status: true, cookie: true, xfbml: true });
+
+	  FB.getLoginStatus(function (response) {
+if (response.session) {	
+  
+	window.location="http://ec2-107-20-87-250.compute-1.amazonaws.com/app0.1/home.php";
+  }
+	  else
+	  {
+		
+	  }
+});
+};
+(function () {
+    var e = document.createElement('script');
+    e.type = 'text/javascript';
+    e.src = document.location.protocol +
+    '//connect.facebook.net/en_US/all.js';
+    e.async = true;
+    document.getElementById('fb-root').appendChild(e);
+} ());
+/*FB.login(function(response) {
+   if (response.authResponse) {
+     console.log('Welcome!  Fetching your information.... ');
+     FB.api('/me', function(response) {
+       console.log('Good to see you, ' + response.name + '.');
+       FB.logout(function(response) {
+         console.log('Logged out.');
+       });
+     });
+   } else {
+     console.log('User cancelled login or did not fully authorize.');
+   }
+ }, {scope: 'email'});*/
+</script>
+
+
+
+</body>
+
+</html>

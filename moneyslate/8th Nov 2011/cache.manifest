@@ -1,0 +1,25 @@
+CACHE MANIFEST
+#v0.3
+CACHE:
+http://fonts.googleapis.com/css?family=Salsa
+styles/moneyslate.min.css
+http://code.jquery.com/mobile/1.0rc2/jquery.mobile.structure-1.0rc2.min.css
+styles/progressbar.css
+styles/homeStyle.css
+http://code.jquery.com/jquery-1.6.4.min.js
+scripts/jqmProps.js
+http://code.jquery.com/mobile/1.0rc2/jquery.mobile-1.0rc2.min.js
+http://connect.facebook.net/en_US/all.js
+scripts/jquery.json-2.3.min.js
+scripts/uoweme-scripts.js
+scripts/localStorage.js
+scripts/offline.js
+scripts/mobiscroll-1.5.2.min.js
+styles/mobiscroll-1.5.2.min.css
+
+home.php
+index.php
+expense.php
+
+NETWORK:
+*

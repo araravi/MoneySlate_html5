@@ -1,0 +1,20 @@
+AddType text/cache-manifest .manifest
+RewriteEngine On
+Options +FollowSymLinks
+RewriteRule ^getCategory/?$ getCategory.php [L,QSA]
+RewriteRule ^expense_det/(.*)$ expense_det.php?exp_id=$1 [L,QSA]
+RewriteRule ^getMe/?$ getMe.php [L,QSA]
+RewriteRule ^expenses/?$ expenses.php [L,QSA]
+RewriteRule ^fr/(.*)$ fr.php?id=$1 [L,QSA]
+RewriteRule ^addPaymentlist/?$ addPaymentlist.php [L,QSA]
+RewriteRule ^putPayment/?$ putPayment.php [L,QSA]
+RewriteRule ^feeds/?$ feeds.php [L,QSA]
+RewriteRule ^showMembers/?$ showMembers.php [L,QSA]
+RewriteRule ^reporttile/?$ reporttile.php [L,QSA]
+RewriteRule ^addPaymentlist/?$ addPaymentlist.php [L,QSA]
+RewriteRule ^metile/?$ metile.php [L,QSA]
+RewriteRule ^addCategory/?$ addCategory [L,QSA]
+RewriteRule ^report_det/(.*)/(.*)$ report_det.php?id=$1&owe=$2 [L,QSA]
+RewriteRule ^report/?$ report.php [L,QSA]
+RewriteRule ^groups/?$ groups.php [L,QSA]
+RewriteRule ^home\.html http://ec2-107-20-87-250.compute-1.amazonaws.com/auth/login.php [R=301,L]
